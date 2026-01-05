@@ -1,0 +1,2 @@
+job_id,job_title,industry,location,salary_usd,skills_required,remote_option,company_size,posting_date,salary_usd_normalized
+4344,Quantum Software Developer,Quantum Computing,Berlin,247645,"Quantum Algorithms, Qiskit",1,2,2025-10-19,0.9882736514699191
