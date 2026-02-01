@@ -1,0 +1,2 @@
+Date,Open_Price,Close_Price,High_Price,Low_Price,Volume,Daily_Return_Pct,Volatility_Range,VIX_Close,Economic_News_Flag,Sentiment_Score,Federal_Rate_Change_Flag,GeoPolitical_Risk_Score,Currency_Index,Close_Price_Normalized
+1970-02-17,10.11,11.62,12.07,9.64,783948,14.9357,2.43,43.58,1,-0.66,1,10.3,105.73,0.08193812205848312

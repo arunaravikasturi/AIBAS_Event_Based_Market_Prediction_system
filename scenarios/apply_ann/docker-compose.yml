@@ -1,0 +1,28 @@
+version: "3.9"
+
+volumes:
+  ai_system:
+
+services:
+  learning:
+    image: shashankk5/event-based-market-learning
+    volumes:
+      - ai_system:/tmp
+
+  activation:
+    image: shashankk5/event-based-market-activation
+    volumes:
+      - ai_system:/tmp
+
+  knowledge:
+    image: shashankk5/event-based-market-knowledge
+    volumes:
+      - ai_system:/tmp
+
+  code:
+    image: shashankk5/event-based-market-code
+    volumes:
+      - ai_system:/tmp
+    depends_on:
+      - activation
+      - knowledge
