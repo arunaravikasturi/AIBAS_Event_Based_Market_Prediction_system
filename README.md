@@ -1,122 +1,177 @@
-# 💼 Future Job Salary Prediction System (ANN & OLS)
+📈 Event-Based Market Predictor
 
-This repository contains an AI-based system for **predicting future job salaries** in high-growth industries using **Artificial Neural Networks (ANN)** and **Ordinary Least Squares (OLS)** regression.
+(ANN & OLS — AI-CPS Architecture)
 
-The project was developed as part of the course  
-**“M. Grum: Advanced AI-based Application Systems (AIBAS)”**  
-at the **University of Potsdam**.
+This repository contains an AI-based system for predicting financial market prices using Artificial Neural Networks (ANN) and Ordinary Least Squares (OLS) regression.
 
----
+The project was developed for the course
+“M. Grum: Advanced AI-based Application Systems (AIBAS)”
+at the University of Potsdam.
 
-## 📌 Project Overview
+🧭 Project Overview
 
-The objective of this project is to design, train, evaluate, and deploy a **salary prediction system** for future job postings (year 2025).  
-The system predicts the **annual salary (USD)** of a job based on structured attributes such as industry, location, company size, remote option, and required skills.
+The objective of this project is to design, train, evaluate, and deploy an event-driven market prediction system.
+The system predicts the closing market price based on economic signals, volatility indicators, geopolitical risk, sentiment analysis, and macro-economic events.
 
-The project follows the **AI-CPS architecture**, including:
-- Data scraping and preparation
-- ANN model training (TensorFlow)
-- OLS baseline model (Statsmodels)
-- Model comparison and diagnostics
-- Docker-based deployment (learningBase, activationBase, knowledgeBase, codeBase)
+The project follows the AI-CPS architecture, including:
 
----
+Data scraping and preparation
 
-## 🧠 Models Implemented
+Algorithmic data cleaning, normalization & outlier removal
 
-### 1️⃣ Artificial Neural Network (ANN)
-- Framework: TensorFlow / Keras
-- Task: Regression (salary prediction)
-- Optimized with early stopping and validation monitoring
+ANN model training (TensorFlow)
 
-### 2️⃣ Ordinary Least Squares (OLS)
-- Framework: Statsmodels
-- Task: Same regression problem as ANN
-- Used as an interpretable baseline model
+OLS baseline model (Statsmodels)
 
----
+Model comparison and diagnostics
 
-## 📊 Dataset Description
+Docker-based deployment
+(learningBase, activationBase, knowledgeBase, codeBase)
 
-**File:** `future_jobs_dataset.csv`  
-**Type:** Synthetic dataset (educational use only)  
-**Rows:** 10,000  
-**Year Modeled:** 2025  
+🧠 Models Implemented
+1️⃣ Artificial Neural Network (ANN)
 
-### Key Features:
-- `job_id` – Unique job identifier  
-- `job_title` – Job role title  
-- `industry` – AI, Blockchain, Green Tech, Quantum Computing  
-- `location` – Job location (city)  
-- `salary_usd` – Annual salary (target variable)  
-- `skills_required` – Required skills list  
-- `remote_option` – Remote work availability  
-- `company_size` – Small / Medium / Large  
-- `posting_date` – Job posting date  
+Framework: TensorFlow / Keras
 
-The dataset was **cleaned, normalized, and split** into:
-- `training_data.csv` (80%)
-- `test_data.csv` (20%)
-- `activation_data.csv` (single unseen entry)
+Task: Market price regression
 
----
+Optimized using:
+
+Early stopping
+
+Learning-rate scheduling
+
+Validation monitoring
+
+2️⃣ Ordinary Least Squares (OLS)
+
+Framework: Statsmodels
+
+Provides an interpretable linear baseline
+
+Used for comparison and diagnostics
+
+📊 Dataset Description
+
+File: Market_Trend_External.csv
+Type: Financial & macro-economic time-series dataset
+Rows: 24,000+
+Target: Close_Price
+
+Key Features:
+| Feature                    | Description                    |
+| -------------------------- | ------------------------------ |
+| `Date`                     | Market trading date            |
+| `Open_Price`               | Opening price                  |
+| `Close_Price`              | Closing price *(target)*       |
+| `High_Price`               | Daily high                     |
+| `Low_Price`                | Daily low                      |
+| `Volume`                   | Trading volume                 |
+| `Daily_Return_Pct`         | Daily return percentage        |
+| `Volatility_Range`         | Market volatility indicator    |
+| `VIX_Close`                | Market fear index              |
+| `Economic_News_Flag`       | Major economic event indicator |
+| `Sentiment_Score`          | Market sentiment score         |
+| `Federal_Rate_Change_Flag` | Interest rate change event     |
+| `GeoPolitical_Risk_Score`  | Geopolitical risk indicator    |
+| `Currency_Index`           | Global currency index          |
 
 
----
+🧪 Data Preparation Pipeline (Subgoal 2)
 
-## 🛠️ Technologies Used
+The dataset is processed as follows:
 
-- Python 3.x
-- TensorFlow / Keras
-- Statsmodels
-- Pandas, NumPy
-- Matplotlib
-- Scikit-learn
-- Docker & Docker Compose
-- Jupyter Notebook
+Data loading
 
----
+Data cleaning
 
-## 🚀 How to Run the Project
+Algorithmic outlier removal
 
-### 1️⃣ Clone the Repository
+Algorithmic normalization
 
-git clone <your-repository-url>
-cd <repository-folder>
+Train-test split
 
-### 2️⃣ Train Models
+training_data.csv → 80%
 
-Run ANN notebook: ANN_Salary_Model.ipynb
+test_data.csv → 20%
 
-Run OLS notebook: OLS_Salary_Model.ipynb
+Activation dataset creation
 
-### 3️⃣ Activation (Inference)
+activation_data.csv → single unseen row
 
-Use activation_data.csv
+Final dataset saved as:
 
-Run ANN and OLS activation notebooks
+joint_data_collection.csv
 
-Output: predicted salary in USD
+All generated datasets are stored in /data.
 
-### 4️⃣ Docker Deployment
-docker-compose -f docker-compose-ann.yml up
-docker-compose -f docker-compose-ols.yml up
+🛠️ Technologies Used
 
-### 📈 Evaluation Metrics
+Python 3.x
 
-Mean Squared Error (MSE)
+TensorFlow / Keras
 
-Root Mean Squared Error (RMSE)
+Statsmodels
 
-Mean Absolute Error (MAE)
+Pandas, NumPy
 
-R² Score
+Scikit-learn
 
-The ANN consistently outperforms OLS in predictive accuracy, while OLS provides better interpretability.
+Matplotlib
 
-### 👥 Project Team
+Docker & Docker Compose
 
-Shashank S
+Jupyter Notebook
+
+🚀 How to Run the Project
+1️⃣ Clone the Repository
+git clone https://github.com/shashank237/AIBAS_Event_Based_Market_Predictor.git
+cd AIBAS_Event_Based_Market_Predictor
+
+2️⃣ Train Models
+
+Run:
+
+ANN_Market_Model.ipynb
+
+OLS_Market_Model.ipynb
+
+3️⃣ Activation (Inference)
+
+Use:
+
+activation_data.csv
+
+Run activation notebooks to generate predictions.
+
+4️⃣ Docker Deployment (AI-CPS System)
+cd scenarios/apply_ann
+docker compose up --build
+
+📈 Evaluation Results
+Model	RMSE	R²
+ANN	0.001067	0.999978
+OLS	0.004719	0.999568
+
+The ANN achieves near-perfect predictive performance, while OLS provides strong interpretability and diagnostic insight.
+
+🧩 AI-CPS Architecture
+
+The system implements a complete AI-Cyber-Physical System:
+
+LearningBase → Model training
+
+KnowledgeBase → Model storage & versioning
+
+ActivationBase → Real-time inference
+
+CodeBase → System orchestration
+
+All components communicate via Docker containers.
+
+👥 Project Team
+
+Shashank Sanjay Kalaskar
 
 Aruna Ravi Kasturi Rama Mohan Babu
 
@@ -124,25 +179,13 @@ University of Potsdam
 Faculty of Business, Information Systems
 Chair of AI-based Application Systems
 
-### 📜 License
+📜 License
 
-This project is licensed under the AGPL-3.0 License,
-as required by the course guidelines.
-
+Licensed under AGPL-3.0, in compliance with course requirements.
 See the LICENSE file for details.
 
-### 📌 Acknowledgments
+🙏 Acknowledgments
 
 This project was developed as part of the course
-“M. Grum: Advanced AI-based Application Systems”
+“Advanced AI-based Application Systems (AIBAS)”
 at the University of Potsdam.
-
-
----
-
-### If you want, I can next:
-- ✅ Adjust this README **exactly to match your Docker images**
-- ✅ Add a **“Course Requirements Mapping” section**
-- ✅ Review it from an **examiner’s perspective**
-
-### Just tell me 👍
