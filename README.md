@@ -1,64 +1,67 @@
-📈 Event-Based Market Predictor
+# 📈 Event-Based Market Predictor
 
-(ANN & OLS — AI-CPS Architecture)
+**(ANN & OLS — AI-CPS Architecture)**
 
-This repository contains an AI-based system for predicting financial market prices using Artificial Neural Networks (ANN) and Ordinary Least Squares (OLS) regression.
+This repository contains an AI-based system for predicting financial market prices using **Artificial Neural Networks (ANN)** and **Ordinary Least Squares (OLS)** regression.
 
 The project was developed for the course
-“M. Grum: Advanced AI-based Application Systems (AIBAS)”
-at the University of Potsdam.
+**“M. Grum: Advanced AI-based Application Systems (AIBAS)”**
+at the **University of Potsdam**.
 
-🧭 Project Overview
+---
 
-The objective of this project is to design, train, evaluate, and deploy an event-driven market prediction system.
-The system predicts the closing market price based on economic signals, volatility indicators, geopolitical risk, sentiment analysis, and macro-economic events.
+## 🧭 Project Overview
 
-The project follows the AI-CPS architecture, including:
+The objective of this project is to **design, train, evaluate, and deploy** an event-driven market prediction system.
+The system predicts the **closing market price** based on:
 
-Data scraping and preparation
+* Economic signals
+* Volatility indicators
+* Geopolitical risk
+* Sentiment analysis
+* Macro-economic events
 
-Algorithmic data cleaning, normalization & outlier removal
+The project follows the **AI-CPS architecture**, including:
 
-ANN model training (TensorFlow)
+* Data scraping and preparation
+* Algorithmic data cleaning, normalization & outlier removal
+* ANN model training (TensorFlow)
+* OLS baseline model (Statsmodels)
+* Model comparison and diagnostics
+* Docker-based deployment
+  *(learningBase, activationBase, knowledgeBase, codeBase)*
 
-OLS baseline model (Statsmodels)
+---
 
-Model comparison and diagnostics
+## 🧠 Models Implemented
 
-Docker-based deployment
-(learningBase, activationBase, knowledgeBase, codeBase)
+### 1️⃣ Artificial Neural Network (ANN)
 
-🧠 Models Implemented
-1️⃣ Artificial Neural Network (ANN)
+* **Framework:** TensorFlow / Keras
+* **Task:** Market price regression
+* **Optimized using:**
 
-Framework: TensorFlow / Keras
+  * Early stopping
+  * Learning-rate scheduling
+  * Validation monitoring
 
-Task: Market price regression
+### 2️⃣ Ordinary Least Squares (OLS)
 
-Optimized using:
+* **Framework:** Statsmodels
+* Provides an interpretable linear baseline
+* Used for comparison and diagnostics
 
-Early stopping
+---
 
-Learning-rate scheduling
+## 📊 Dataset Description
 
-Validation monitoring
+* **File:** `Market_Trend_External.csv`
+* **Type:** Financial & macro-economic time-series dataset
+* **Rows:** 24,000+
+* **Target:** `Close_Price`
 
-2️⃣ Ordinary Least Squares (OLS)
+### Key Features
 
-Framework: Statsmodels
-
-Provides an interpretable linear baseline
-
-Used for comparison and diagnostics
-
-📊 Dataset Description
-
-File: Market_Trend_External.csv
-Type: Financial & macro-economic time-series dataset
-Rows: 24,000+
-Target: Close_Price
-
-Key Features:
 | Feature                    | Description                    |
 | -------------------------- | ------------------------------ |
 | `Date`                     | Market trading date            |
@@ -76,116 +79,123 @@ Key Features:
 | `GeoPolitical_Risk_Score`  | Geopolitical risk indicator    |
 | `Currency_Index`           | Global currency index          |
 
+---
 
-🧪 Data Preparation Pipeline (Subgoal 2)
+## 🧪 Data Preparation Pipeline (Subgoal 2)
 
 The dataset is processed as follows:
 
-Data loading
+1. Data loading
+2. Data cleaning
+3. Algorithmic outlier removal
+4. Algorithmic normalization
+5. Train-test split
 
-Data cleaning
+* `training_data.csv` → **80%**
+* `test_data.csv` → **20%**
 
-Algorithmic outlier removal
+6. Activation dataset creation
 
-Algorithmic normalization
-
-Train-test split
-
-training_data.csv → 80%
-
-test_data.csv → 20%
-
-Activation dataset creation
-
-activation_data.csv → single unseen row
+* `activation_data.csv` → single unseen row
 
 Final dataset saved as:
 
-joint_data_collection.csv
+* `joint_data_collection.csv`
 
-All generated datasets are stored in /data.
+📁 All generated datasets are stored in `/data`.
 
-🛠️ Technologies Used
+---
 
-Python 3.x
+## 🛠️ Technologies Used
 
-TensorFlow / Keras
+* Python 3.x
+* TensorFlow / Keras
+* Statsmodels
+* Pandas, NumPy
+* Scikit-learn
+* Matplotlib
+* Docker & Docker Compose
+* Jupyter Notebook
 
-Statsmodels
+---
 
-Pandas, NumPy
+## 🚀 How to Run the Project
 
-Scikit-learn
+### 1️⃣ Clone the Repository
 
-Matplotlib
-
-Docker & Docker Compose
-
-Jupyter Notebook
-
-🚀 How to Run the Project
-1️⃣ Clone the Repository
+```bash
 git clone https://github.com/shashank237/AIBAS_Event_Based_Market_Predictor.git
 cd AIBAS_Event_Based_Market_Predictor
+```
 
-2️⃣ Train Models
+### 2️⃣ Train Models
 
 Run:
 
-ANN_Market_Model.ipynb
+* `ANN_Market_Model.ipynb`
+* `OLS_Market_Model.ipynb`
 
-OLS_Market_Model.ipynb
-
-3️⃣ Activation (Inference)
+### 3️⃣ Activation (Inference)
 
 Use:
 
-activation_data.csv
+* `activation_data.csv`
 
 Run activation notebooks to generate predictions.
 
-4️⃣ Docker Deployment (AI-CPS System)
+### 4️⃣ Docker Deployment (AI-CPS System)
+
+```bash
 cd scenarios/apply_ann
 docker compose up --build
+```
 
-📈 Evaluation Results
-Model	RMSE	R²
-ANN	0.001067	0.999978
-OLS	0.004719	0.999568
+---
+
+## 📈 Evaluation Results
+
+| Model | RMSE     | R²       |
+| ----- | -------- | -------- |
+| ANN   | 0.001067 | 0.999978 |
+| OLS   | 0.004719 | 0.999568 |
 
 The ANN achieves near-perfect predictive performance, while OLS provides strong interpretability and diagnostic insight.
 
-🧩 AI-CPS Architecture
+---
 
-The system implements a complete AI-Cyber-Physical System:
+## 🧩 AI-CPS Architecture
 
-LearningBase → Model training
+The system implements a complete **AI-Cyber-Physical System**:
 
-KnowledgeBase → Model storage & versioning
-
-ActivationBase → Real-time inference
-
-CodeBase → System orchestration
+* **LearningBase** → Model training
+* **KnowledgeBase** → Model storage & versioning
+* **ActivationBase** → Real-time inference
+* **CodeBase** → System orchestration
 
 All components communicate via Docker containers.
 
-👥 Project Team
+---
 
-Shashank Sanjay Kalaskar
+## 👥 Project Team
 
-Aruna Ravi Kasturi Rama Mohan Babu
+* **Shashank Sanjay Kalaskar**
+* **Aruna Ravi Kasturi Rama Mohan Babu**
 
-University of Potsdam
+**University of Potsdam**
 Faculty of Business, Information Systems
 Chair of AI-based Application Systems
 
-📜 License
+---
 
-Licensed under AGPL-3.0, in compliance with course requirements.
-See the LICENSE file for details.
+## 📜 License
 
-🙏 Acknowledgments
+Licensed under **AGPL-3.0**, in compliance with course requirements.
+See the `LICENSE` file for details.
+
+---
+
+## 🙏 Acknowledgments
 
 This project was developed as part of the course
-“Advanced AI-based Application Systems (AIBAS)”
-at the University of Potsdam.
+**“Advanced AI-based Application Systems (AIBAS)”**
+at the **University of Potsdam**.
