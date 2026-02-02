@@ -124,8 +124,8 @@ Final dataset saved as:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/shashank237/AIBAS_Event_Based_Market_Predictor.git
-cd AIBAS_Event_Based_Market_Predictor
+git clone https://github.com/arunaravikasturi/AIBAS_Event_Based_Market_Prediction_system.git
+cd AIBAS_Event_Based_Market_Prediction_system
 ```
 
 ### 2️⃣ Train Models
