@@ -13,6 +13,7 @@ services:
     image: shashankk5/event-based-market-activation
     volumes:
       - ai_system:/tmp
+      - ../../data:/tmp/activation:ro
 
   knowledge:
     image: shashankk5/event-based-market-knowledge
@@ -23,6 +24,7 @@ services:
     image: shashankk5/event-based-market-code
     volumes:
       - ai_system:/tmp
+      - ../../data:/tmp/activation:ro
     depends_on:
       - activation
       - knowledge
