@@ -150,7 +150,7 @@ graph LR
 ```bash
 # Clone the repository
 git clone https://github.com/arunaravikasturi/AIBAS_Event_Based_Market_Prediction_system.git
-cd AIBAS_Event_Based_Market_Prediction_FINAL
+Cd AIBAS_Event_Based_Market_Prediction_system
 ```
 
 ---
