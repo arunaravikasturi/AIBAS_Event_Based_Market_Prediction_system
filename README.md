@@ -149,7 +149,7 @@ graph LR
 
 ```bash
 # Clone the repository
-git clone https://github.com/shashank237/AIBAS_Event_Based_Market_Prediction_FINAL.git](https://github.com/arunaravikasturi/AIBAS_Event_Based_Market_Prediction_system
+git clone [https://github.com/arunaravikasturi/AIBAS_Event_Based_Market_Prediction_system](https://github.com/arunaravikasturi/AIBAS_Event_Based_Market_Prediction_system)
 cd AIBAS_Event_Based_Market_Prediction_FINAL
 ```
 
